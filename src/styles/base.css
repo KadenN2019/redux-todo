@@ -1,0 +1,76 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container{
+  width: 500px;
+  margin: auto;
+}
+
+h1{
+  text-align: center;
+  font-weight: 100;
+  font-size: 50px;
+  margin: 0px;
+}
+
+.textbox{
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  outline: none;
+  color: gray;
+}
+
+.things{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  cursor: default;
+  color: gray;
+}
+
+.things button{
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+  font-weight: 300;
+}
+
+.complete{
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.count{
+  font-size: 13px;
+  font-style: italic;
+  color: gray;
+}
