@@ -1,11 +1,8 @@
-import Axios from 'axios'
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { useSelector, useDispatch  } from 'react-redux'
+import { listItems, completeItem, deleteItem } from '../actions/Action'
 import "../styles/base.css"
-import { useDispatch } from 'react-redux'
-import { listItems, completeItem } from '../actions/Action'
-import { deleteItem } from '../actions/Action'
 
 
 export default function(props){
@@ -20,7 +17,7 @@ export default function(props){
     }
 
     function complete(id,status){
-        dispatch(completeItem(id))
+        dispatch(completeItem(id,status))
     }
 
     useEffect(() => {
@@ -30,9 +27,13 @@ export default function(props){
     return (
         <div>
             <div>
-                {items.map((item, i) => (
+                {items.map((item) => (
                     <div key={`todo-${item.id}`} className='things' >
-                        <div className={item.active === false ? '': 'complete'}onClick={(e)=>complete(item.id,item.active)}>{item.name}</div>
+                        <div 
+                            className={item.active === false ? '': 'complete'}
+                            onClick={(e)=>complete(item.id,item.active)}>
+                                {item.name}
+                        </div>
                         <button  onClick={(e)=> del(item.id)} >X</button>
                     </div>
                 ))}

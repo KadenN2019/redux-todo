@@ -4,7 +4,7 @@ export function addItem(item){
     return dispatch =>{
         Axios.post('/items', {name:item, active: false}).then(resp =>{
             dispatch({
-                type: 'ADD_ITEM',
+                type: `ADD_ITEM`,
                 payload: resp.data
             })
         })
@@ -19,12 +19,12 @@ export function deleteItem(id){
     }
 }
 
-export function completeItem(id,status){
+export function completeItem(id, status){
     return dispatch => {
         if(status === false){
             Axios.patch('/items/'+ id,{active: true}).then(resp =>{
                 dispatch({
-                    type: "COMP_ITEM",
+                    type: `COMP_ITEM`,
                     payload: resp.data,
                     id:id
                 })
@@ -32,7 +32,7 @@ export function completeItem(id,status){
         }else{
             Axios.patch('/items/'+ id,{active: false}).then(resp =>{
                 dispatch({
-                    type: "COMP_ITEM",
+                    type: `COMP_ITEM`,
                     payload: resp.data,
                     id:id
                 })
@@ -46,7 +46,7 @@ export function listItems(){
     return dispatch => {
         Axios.get('/items').then(resp =>{
             dispatch({
-                type: "LIST_ITEMS",
+                type: `LIST_ITEMS`,
                 payload: resp.data
             })
         })

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { addItem } from '../actions/Action'
 import { useDispatch } from 'react-redux'
+import { addItem } from '../actions/Action'
 
 export default function (props) {
     const [item, setItem] = useState('')
@@ -16,10 +16,10 @@ export default function (props) {
     return (
         <form onSubmit={handleSubmit} >
             <input 
-                className="textbox"
+                className='textbox'
                 type='text' 
                 id='item' 
-                name = "item"
+                name = 'item'
                 value={item} 
                 onChange={e => setItem(e.target.value)} 
             />
